@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Esta línea es el "cerebro" del responsive, no la borres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>INDUMAG | Oficial</title>
     <style>
@@ -12,7 +11,6 @@
             --tiempo: 0.7s;
         }
 
-        /* Reseteo para que ocupe toda la pantalla real del celular */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         
         html, body { 
@@ -21,10 +19,9 @@
             background: #fff; 
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Evita rebotes raros en iPhone */
+            overflow: hidden;
         }
 
-        /* HEADER */
         .header { 
             padding: 12px 15px; 
             background: #fff; 
@@ -43,11 +40,10 @@
         }
         .search-box input { border: none; background: none; outline: none; width: 100%; padding-left: 10px; font-size: 16px; color: #666; }
 
-        /* CONTENEDOR SPLIT DINÁMICO */
         .split-container { 
             flex: 1; 
             display: flex; 
-            flex-direction: column; /* Vertical por defecto (Móvil) */
+            flex-direction: column;
             background: #000;
         }
 
@@ -63,7 +59,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Animación inicial suave para la de arriba */
         @keyframes introBounce {
             0% { flex: 1; }
             40% { flex: 2; }
@@ -83,7 +78,6 @@
         }
         .section.expanded .bg-img { transform: scale(1.1); }
 
-        /* Degradado para que el texto siempre se vea */
         .section::after {
             content: '';
             position: absolute;
@@ -105,7 +99,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        /* FOOTER: PROTAGONISMO TOTAL */
         .brand-footer { 
             padding: 20px 0 35px 0; 
             background: #fff; 
@@ -113,7 +106,7 @@
             border-top: 3px solid var(--verde);
         }
         .brand-footer h3 { 
-            font-size: 18px; /* Tamaño grande para confianza */
+            font-size: 18px;
             text-align: center; 
             color: #111; 
             margin-bottom: 20px; 
@@ -123,7 +116,6 @@
         }
         .brand-footer h3 span { color: var(--verde); }
         
-        /* Carrusel fluido */
         .track-container { overflow: hidden; width: 100%; }
         .track { 
             display: flex; 
@@ -139,7 +131,6 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* AJUSTES PARA PC / TABLET HORIZONTAL */
         @media (min-width: 992px) {
             .split-container { flex-direction: row; }
             .section.expanded { flex: 2.5; }
@@ -165,9 +156,9 @@
     </header>
 
     <div class="split-container">
-        <!-- Sección 1 con animación de pista visual -->
         <div class="section hint" onclick="toggleSplit(this)">
-            <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000');"></div>
+            <!-- Imagen de soldadura/trabajo industrial que no bloquea -->
+            <div class="bg-img" style="background-image: url('https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1000');"></div>
             <div class="content">
                 <div class="title-group">
                     <h2>SERVICIO<br>TÉCNICO</h2>
@@ -177,9 +168,9 @@
             </div>
         </div>
 
-        <!-- Sección 2 -->
         <div class="section" onclick="toggleSplit(this)">
-            <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000');"></div>
+            <!-- Imagen de equipos industriales que no bloquea -->
+            <div class="bg-img" style="background-image: url('https://images.pexels.com/photos/3846517/pexels-photo-3846517.jpeg?auto=compress&cs=tinysrgb&w=1000');"></div>
             <div class="content">
                 <div class="title-group">
                     <h2>EQUIPOS Y<br>REPUESTOS</h2>
@@ -190,7 +181,6 @@
         </div>
     </div>
 
-    <!-- SELLO DE CONFIANZA -->
     <div class="brand-footer">
         <h3>SERVICIO TÉCNICO <span>AUTORIZADO</span></h3>
         <div class="track-container">
@@ -199,7 +189,6 @@
                 <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
                 <div class="logo-box"><img src="https://ujueta.com/assets/marca-elite-DVCMNE0a.svg"></div>
                 <div class="logo-box"><img src="https://www.harrisproductsgroup.com/-/media/images/harris-logo.png"></div>
-                <!-- Bucle para infinito -->
                 <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Lincoln_Electric_logo.svg/1280px-Lincoln_Electric_logo.svg.png"></div>
                 <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
                 <div class="logo-box"><img src="https://ujueta.com/assets/marca-elite-DVCMNE0a.svg"></div>
@@ -211,13 +200,9 @@
     <script>
         function toggleSplit(element) {
             const sections = document.querySelectorAll('.section');
-            
-            // Eliminar animación inicial al primer toque
             sections.forEach(s => s.style.animation = 'none');
-
             const isExpanded = element.classList.contains('expanded');
             sections.forEach(s => s.classList.remove('expanded'));
-
             if (!isExpanded) {
                 element.classList.add('expanded');
             }
