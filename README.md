@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -164,7 +162,10 @@ h2 {
     width: max-content;
     animation: scrollLogos 25s linear infinite;
     align-items: center;
+    will-change: transform;
 }
+
+body { overflow-x: hidden; }
 
 .logo-box {
     width: 130px;
@@ -236,11 +237,18 @@ h2 {
 
 <div class="brand-footer">
     <h3>SERVICIO TÉCNICO <span>AUTORIZADO</span></h3>
-    <div class="track">
-        <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Lincoln_Electric_logo.svg"></div>
-        <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
-        <div class="logo-box"><img src="https://ujueta.com/assets/marca-elite-DVCMNE0a.svg"></div>
-        <div class="logo-box"><img src="https://www.harrisproductsgroup.com/-/media/images/harris-logo.png"></div>
+    <div class="track-container">
+        <div class="track">
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Lincoln_Electric_logo.svg"></div>
+            <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
+            <div class="logo-box"><img src="https://ujueta.com/assets/marca-elite-DVCMNE0a.svg"></div>
+            <div class="logo-box"><img src="https://www.harrisproductsgroup.com/-/media/images/harris-logo.png"></div>
+            <!-- Duplicados para loop infinito -->
+            <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Lincoln_Electric_logo.svg"></div>
+            <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
+            <div class="logo-box"><img src="https://ujueta.com/assets/marca-elite-DVCMNE0a.svg"></div>
+            <div class="logo-box"><img src="https://www.harrisproductsgroup.com/-/media/images/harris-logo.png"></div>
+        </div>
     </div>
 </div>
 
