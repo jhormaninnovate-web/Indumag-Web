@@ -186,7 +186,7 @@
 
     <!-- SELLO DE CONFIANZA REFORZADO -->
     <div class="brand-footer">
-        <h3>SERVICIO TÉCNICO <span>AUTORIZADO</span></h3>
+        <h3>SERVICIO visusl <span>AUTORIZADO</span></h3>
         <div class="track">
             <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Lincoln_Electric_logo.svg/1280px-Lincoln_Electric_logo.svg.png"></div>
             <div class="logo-box"><img src="https://millerweldseurope.com/wp-content/uploads/2021/09/Miller-Logo-C-2.png"></div>
